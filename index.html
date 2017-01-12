@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>particleui Example Page </title>
+        <!-- Bootstrap core CSS -->
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <script src="./js/libs/jquery-2.2.0.min.js"></script>
+        <script src="./js/libs/bootstrap.min.js"></script>
+        <script src="./js/libs/particle.min.js"></script>
+        <script src="./js/libs/particleui.js"></script>
+        <script src="./js/customscripts.js"></script>
+    </head>
+    <body>
+        <div class="container" id="loginSplash">
+            <div class="jumbotron">
+                <h1>Welcome to your device page!</h1>
+                <p>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Sign in</button>
+                </p>
+            </div>
+        </div>
+        <div class="container hidden" id="devicePage">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h4>Select a device</h4>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group" id="deviceList">
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-success" onclick="doLogout()">Sign out</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <h4>Variables</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <p>
+                                    Variable var1: <span class="particleui particleui-variable" particleui-name="voltage" id="voltage">---</span>
+                                </p>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 0%" id="progress">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="loginModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title">Sign in to your Particle.io account</h4>
+                        </div>
+                        <div class="modal-body">
+                            <label for="#email">E-mail Address</label><br />
+                            <input type="email" placeholder="my@email.com" id="email" style="width: 100%;" /><br/><br/>
+                            <label for="#password">Password</label><br />
+                            <input type="password" placeholder="*****" id="password" style="width: 100%;"/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="login()">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
